@@ -1,1 +1,22 @@
-{ "list": ["telegram", "gsudo", "steam", "git", "powershell-core", "teste032920923teste"] }
+{ "list": [
+        "7zip",
+        "git",
+        "pwsh",
+        "ripgrep",
+        "sqlite",
+        "uutils-coreutils",
+        "rustup-msvc",
+        "rust-analyzer",
+        "gcc",
+        "make",
+        "vscode",
+        "pcre2grep",
+        "fd",
+        "fzf",
+        "python",
+        "neovim",
+        "emacs",
+        "logseq",
+        "blender",
+        "krita"
+        ]}

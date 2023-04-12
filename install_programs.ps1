@@ -1,5 +1,5 @@
-﻿$packageListName = 'package_list.json'
-$programs = (Get-Content -Raw -Path $packageListName | ConvertFrom-Json).list
+﻿$packageList = 'package_list.json'
+$programs = (Get-Content -Raw -Path $packageList | ConvertFrom-Json).list
 $listOk = @()
 $someFailed = $false
 $choice = $null
@@ -8,7 +8,7 @@ $choice = $null
 function startProccess{
     Write-Output "`nChecking packages...`n"
     foreach($i in $programs){
-        $result = choco find $i
+        $result = scoop search $i
         if($result.Length -gt 2){
             $listOk = $listOk + $i
             $i + ' - ok'
@@ -46,7 +46,7 @@ function progressBar{
 
 function install{
     param($item)
-    choco install $item -y --acceptlicense --force
+    scoop install $item 
 }
 
 

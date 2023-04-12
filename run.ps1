@@ -1,5 +1,13 @@
-﻿$installPrograms = '.\install_programs.ps1'
+﻿$apps = '.\install_programs.ps1'
 
-Invoke-Expression (Invoke-RestMethod 'https://community.chocolatey.org/install.ps1')
+#
+# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-Invoke-Expression $installPrograms
+# Auto install Scoop
+irm get.scoop.sh | iex
+
+# Add bucket
+scoop bucket add extras
+
+# Install app
+Invoke-Expression $apps
